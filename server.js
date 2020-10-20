@@ -13,6 +13,9 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 
+// username user
+// password cKH1v8UqHLhoHcnU
+
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
 
@@ -21,4 +24,4 @@ db.once("open", () => console.log("Connected to Mongoose"));
 
 app.use("/", indexRouter);
 
-app.listen(process.env.PROT || 3001);
+app.listen(process.env.PORT || 3000);
